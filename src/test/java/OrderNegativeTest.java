@@ -34,7 +34,7 @@ public class OrderNegativeTest {
     void shouldNameInvaulibleTest() {
         driver.get("http://localhost:9999/");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Adam Smasher");
-        driver.findElement(By.cssSelector("[data-test-id=phone] input")).clear();
+        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79127538596");
         driver.findElement(By.className("button")).click();
         String expected = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
         String actual = driver.findElement(By.cssSelector("[data-test-id='name'].input_invalid .input__sub")).getText();
